@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Projects, built with Claude</title>
+<style>
+:root{--bg:#faf8f4;--fg:#1f1d1a;--mut:#6d675f;--line:#e3ded5;--card:#fff;--acc:#c4552d;--ok:#2f7d5b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 Georgia,'Times New Roman',serif}
+.w{max-width:980px;margin:0 auto;padding:48px 24px 80px}
+h1{font-size:40px;margin:0 0 8px;font-weight:400;letter-spacing:-.5px}
+.lede{color:var(--mut);max-width:640px;font-size:18px;margin:0 0 12px}
+.note{font:13px/1.5 system-ui,sans-serif;color:var(--mut);border:1px solid var(--line);background:#f3efe7;border-radius:8px;padding:10px 14px;margin:20px 0 40px}
+.proj{display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:start;padding:36px 0;border-top:1px solid var(--line)}
+.proj:nth-child(even) .txt{order:2}
+h2{font-size:26px;font-weight:400;margin:0 0 6px}
+.tag{font:12px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--acc);margin-bottom:6px}
+.txt p{margin:8px 0}.txt ul{padding-left:18px;margin:10px 0;color:var(--mut)}
+.chips span{display:inline-block;font:12px system-ui,sans-serif;border:1px solid var(--line);border-radius:99px;padding:2px 10px;margin:2px 4px 2px 0;background:var(--card)}
+.m{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);overflow:hidden;font:12px/1.4 system-ui,sans-serif}
+.bar{display:flex;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line);background:#f6f3ec;align-items:center}
+.bar i{width:9px;height:9px;border-radius:50%;background:#d8d2c6}.bar b{margin-left:8px;font-weight:500;color:var(--mut)}
+.pad{padding:14px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{text-align:left;color:var(--mut);font-weight:500;padding:4px 6px;border-bottom:1px solid var(--line)}
+td{padding:4px 6px;border-bottom:1px solid #f0ece3}td.r,th.r{text-align:right}
+.tabs{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}.tabs span{padding:3px 9px;border-radius:6px;color:var(--mut)}.tabs .on{background:#f1ece1;color:var(--fg);font-weight:600}
+.grid{display:grid;gap:10px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+.cell{border:1px solid var(--line);border-radius:8px;padding:9px}
+.k{font-size:11px;color:var(--mut)}.v{font:22px Georgia,serif}
+.bubble{background:#f1ece1;border-radius:10px;padding:8px 10px;margin:6px 0;max-width:85%}.bubble.u{margin-left:auto;background:#fbe9e1}
+.bars div{height:10px;border-radius:3px;background:var(--acc);margin:5px 0;opacity:.85}
+.sw{display:flex;gap:6px;margin:6px 0}.sw i{flex:1;height:34px;border-radius:6px}
+.menubar{background:#2a2825;color:#eee;border-radius:8px;padding:6px 12px;display:flex;gap:14px;align-items:center;font:12px system-ui}
+.dd{background:#fff;border:1px solid var(--line);border-radius:8px;margin-top:6px;width:250px;padding:4px}
+.dd div{padding:5px 10px;border-radius:5px}.dd div:first-child{background:#e9f0ff}
+.dd hr{border:0;border-top:1px solid var(--line);margin:4px 0}
+code{background:#f1ece1;border-radius:4px;padding:1px 5px;font-size:13px}
+.d{width:160px;height:90px}
+footer{border-top:1px solid var(--line);padding-top:24px;color:var(--mut);font:13px system-ui,sans-serif}
+@media(max-width:760px){.proj{grid-template-columns:1fr}.proj:nth-child(even) .txt{order:0}}
+</style></head><body><div class="w">
+<h1>Projects, built with Claude</h1>
+<p class="lede">Data tools and small apps I designed and built with Claude. They're personal tools, so the live versions stay private. Each section below shows what it does and how it's built.</p>
+<div class="note">Ask MLB Stats, Meal Planner and Aesthetic Bank are real screenshots of the tools running on invented sample data (no personal data). The MLB dashboard and menu-bar pictures are illustrative mockups, labeled as such.</div>
+
+<section class="proj"><div class="txt"><div class="tag">Data dashboard</div><h2>MLB stats dashboard, 2015–2026</h2>
+<p>Interactive leaderboards and full stat tables for every regular-season hitter and pitcher: leaders, two-stat scatter plots, situational splits, Statcast quality-of-contact, pitch velocity and zones, spray charts, and career history.</p>
+<ul><li>Sortable tables, filters by league, team, role and minimum playing time</li><li>"Split gaps" compares a player against himself (day vs night, vs lefties vs righties)</li><li>Spray charts re-test every batted ball against each of the 30 ballparks</li></ul>
+<div class="chips"><span>MLB Stats API</span><span>Baseball Savant</span><span>Lahman database</span><span>D3</span></div></div>
+<div class="m"><div class="bar"><i></i><i></i><i></i><b>MLB stats · Hitters · 2026</b></div><div class="pad">
+<div class="tabs"><span class="on">Leaders &amp; table</span><span>Splits</span><span>Statcast</span><span>Spray charts</span><span>Career</span></div>
+<div class="grid g3"><div class="cell"><div class="k">Home runs</div><div class="v">48</div><div class="k">Player A · 1</div></div><div class="cell"><div class="k">OPS</div><div class="v">.985</div><div class="k">Player B · 1</div></div><div class="cell"><div class="k">Walk rate</div><div class="v">17.2%</div><div class="k">Player C · 1</div></div></div>
+<table style="margin-top:10px"><tr><th>Player</th><th class="r">PA</th><th class="r">AVG</th><th class="r">OBP</th><th class="r">SLG</th><th class="r">OPS</th></tr>
+<tr><td>Player A</td><td class="r">650</td><td class="r">.291</td><td class="r">.402</td><td class="r">.583</td><td class="r"><b>.985</b></td></tr>
+<tr><td>Player B</td><td class="r">612</td><td class="r">.318</td><td class="r">.377</td><td class="r">.560</td><td class="r"><b>.937</b></td></tr>
+<tr><td>Player C</td><td class="r">588</td><td class="r">.270</td><td class="r">.391</td><td class="r">.510</td><td class="r"><b>.901</b></td></tr></table></div></div></section>
+
+<section class="proj"><div class="txt"><div class="tag">Natural-language analytics</div><h2>Ask MLB Stats</h2>
+<p>Type a baseball question in plain English and get an answer computed from the underlying game and season tables, shown with the table it came from. One version covers 2015–2026 pitch-level data, another 1871–2014.</p>
+<ul><li>Claude writes the query, the app runs it against CSV tables in the browser</li><li>Every answer links to the rows it used, so results can be checked</li></ul>
+<div class="chips"><span>Claude API</span><span>Tool use</span><span>CSV tables</span></div></div>
+<figure style="margin:0"><img src="ask.jpg" alt="Screenshot of the real tool running on invented sample data (player names and numbers are placeholders)." style="width:100%;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);display:block"><figcaption style="font:12px system-ui;color:var(--mut);margin-top:6px">Screenshot of the real tool running on invented sample data (player names and numbers are placeholders).</figcaption></figure></section>
+
+<section class="proj"><div class="txt"><div class="tag">Planning tool</div><h2>Meal Planner</h2>
+<p>A pantry, recipe box, weekly plan and shopping list in one place, with a "use what I have" mode that ranks recipes by how much of them the pantry already covers.</p>
+<ul><li>Pantry cards show quantity left and days until expiry</li><li>Shopping list builds itself from the week's plan minus what's in the pantry</li><li>Plan recipes with adjustable servings; changes save automatically</li></ul>
+<div class="chips"><span>Browser database</span><span>Pantry expiry tracking</span></div></div>
+<figure style="margin:0"><img src="meal-pantry.jpg" alt="Meal Planner pantry" style="width:100%;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);display:block"><figcaption style="font:12px system-ui;color:var(--mut);margin-top:6px">Screenshot: the pantry inventory, with expiry flags. Real tool, invented sample data.</figcaption></figure></section>
+
+<section class="proj"><div class="txt"><div class="tag">Creative tool</div><h2>Aesthetic Bank</h2>
+<p>A library for visual looks: save reference images with notes on how to use them, then ask Claude to design something in a saved look.</p>
+<ul><li>Each look holds a file plus written "use ideas"</li><li>Prompts to Claude carry the chosen look, so output stays consistent</li></ul>
+<div class="chips"><span>Image storage</span><span>Claude API</span></div></div>
+<figure style="margin:0"><img src="aes.jpg" alt="Screenshot: a saved look with its use-ideas and a design prompt box. Real tool, invented sample looks." style="width:100%;border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);display:block"><figcaption style="font:12px system-ui;color:var(--mut);margin-top:6px">Screenshot: a saved look with its use-ideas and a design prompt box. Real tool, invented sample looks.</figcaption></figure></section>
+
+<section class="proj"><div class="txt"><div class="tag">Automation</div><h2>Menu-bar music suggester</h2>
+<p>A small macOS menu-bar plugin that shows the current Spotify track and, on a click or keyboard shortcut, finds a new song similar to the one playing and plays it. "Endless mode" lines up the next suggestion before the current song ends.</p>
+<ul><li>Suggestions come from Last.fm's similar-tracks data, filtered against songs already liked or already suggested</li><li>Every menu action also works as a command, so any keyboard shortcut can trigger it</li><li>Written as a single Python script with a setup guide and troubleshooting table</li></ul>
+<div class="chips"><span>Python</span><span>SwiftBar</span><span>Spotify Web API</span><span>Last.fm API</span><span>OAuth</span></div></div>
+<div><div class="menubar"><span>♫ Song title – Artist</span></div>
+<div class="dd"><div>Suggest a song</div><div>Endless mode ✓</div><div>Search for a song…</div><div>Reset: start over from my likes</div><hr><div>Pause / Play</div><div>Next track</div><div>Previous track</div></div>
+<p style="font:12px system-ui;color:var(--mut)">Illustrative mockup of the menu. Command names: <code>suggest</code> <code>toggle</code> <code>next</code> <code>prev</code> <code>reset</code> <code>auto</code> <code>search</code></p></div></section>
+
+<footer>Source for these tools is private. Happy to walk through any of them live. · GitHub: <b>tunadahuman</b></footer>
+</div></body></html>
